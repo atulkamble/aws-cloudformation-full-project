@@ -9,7 +9,13 @@ Resources:
           FromPort: 80
           ToPort: 80
           CidrIp: 0.0.0.0/0
+        - IpProtocol: tcp
+          FromPort: 22
+          ToPort: 22
+          CidrIp: 0.0.0.0/0
 
+
+AWSTemplateFormatVersion: "2010-09-09"
   EC2SecurityGroup:
     Type: AWS::EC2::SecurityGroup
     Properties:
