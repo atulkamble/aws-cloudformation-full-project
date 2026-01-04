@@ -1,13 +1,18 @@
 AWSTemplateFormatVersion: "2010-09-09"
 Description: Root Stack
 
+Parameters:
+  S3BucketName:
+    Type: String
+    Description: S3 bucket name where templates are stored
+
 Resources:
   VPCStack:
     Type: AWS::CloudFormation::Stack
     Properties:
-      TemplateURL: https://s3.amazonaws.com/YOUR_BUCKET/templates/vpc.yaml
+      TemplateURL: !Sub https://s3.amazonaws.com/${S3BucketName}/templates/vpc.yaml
 
   SGStack:
     Type: AWS::CloudFormation::Stack
     Properties:
-      TemplateURL: https://s3.amazonaws.com/YOUR_BUCKET/templates/security-groups.yaml
+      TemplateURL: !Sub https://s3.amazonaws.com/${S3BucketName}/templates/security-groups.yaml
