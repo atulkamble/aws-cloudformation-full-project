@@ -1,0 +1,15 @@
+Resources:
+  LaunchTemplate:
+    Type: AWS::EC2::LaunchTemplate
+    Properties:
+      LaunchTemplateData:
+        ImageId: ami-0abcdef12345
+        InstanceType: t2.micro
+        SecurityGroupIds:
+          - !ImportValue EC2SG
+        UserData:
+          Fn::Base64: |
+            #!/bin/bash
+            yum install -y httpd
+            systemctl start httpd
+            echo "CloudFormation ASG Instance" > /var/www/html/index.html

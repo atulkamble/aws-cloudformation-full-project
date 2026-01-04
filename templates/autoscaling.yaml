@@ -1,0 +1,14 @@
+Resources:
+  AutoScalingGroup:
+    Type: AWS::AutoScaling::AutoScalingGroup
+    Properties:
+      MinSize: 1
+      MaxSize: 3
+      DesiredCapacity: 2
+      VPCZoneIdentifier:
+        - !ImportValue PublicSubnet1
+      LaunchTemplate:
+        LaunchTemplateId: !ImportValue LaunchTemplateId
+        Version: !GetAtt LaunchTemplate.LatestVersionNumber
+      TargetGroupARNs:
+        - !ImportValue TargetGroupArn
