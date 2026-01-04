@@ -1,0 +1,36 @@
+{
+  "name": "Dev Container",
+  "image": "mcr.microsoft.com/devcontainers/universal:latest",
+
+  "features": {
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {
+      "version": "latest",
+      "enableNonRootDocker": "true"
+    }
+  },
+
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-azuretools.vscode-docker",
+        "hashicorp.terraform",
+        "ms-vscode.azurecli", 
+        "ms-python.python",
+        "ms-vscode.makefile-tools",
+        "github.copilot"
+      ]
+    }
+  },
+
+  "postCreateCommand": "echo 'Dev Container Ready 🚀'",
+  
+  "remoteUser": "codespace",
+  
+  "containerEnv": {
+    "TZ": "UTC"
+  },
+  
+  "mounts": [
+    "source=/var/run/docker.sock,target=/var/run/docker-host.sock,type=bind"
+  ]
+}

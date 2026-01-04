@@ -1,0 +1,25 @@
+{
+  "name": "Dev Container",
+  "image": "mcr.microsoft.com/devcontainers/universal:2",
+
+  "features": {
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {}
+  },
+
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-azuretools.vscode-docker",
+        "hashicorp.terraform",
+        "ms-vscode.azurecli",
+        "ms-python.python",
+        "ms-vscode.makefile-tools",
+        "github.copilot"
+      ]
+    }
+  },
+
+  "postCreateCommand": "echo 'Dev Container Ready 🚀'",
+
+  "remoteUser": "codespace"
+}
