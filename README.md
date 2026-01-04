@@ -14,9 +14,9 @@
 
 </div>
 
-Below is a **complete, production-ready AWS CloudFormation full project** you can directly use for **training, demos, or real workloads**.
+**complete, production-ready AWS CloudFormation full project** you can directly use for **training, demos, or real workloads**.
 
-I’ve designed it the way you usually structure Terraform projects — **modular, readable, and GitHub-ready** — but **pure CloudFormation (YAML)**.
+**modular, readable, and GitHub-ready** — but **pure CloudFormation (YAML)**.
 
 ---
 
